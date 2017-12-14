@@ -1,3 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
 <SearchConfigurationSettings xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.datacontract.org/2004/07/Microsoft.Office.Server.Search.Portability">
   <SearchQueryConfigurationSettings>
     <SearchQueryConfigurationSettings>
@@ -45,7 +46,7 @@
               <d6p1:OrderedItems />
             </d6p1:QueryPropertyExpressions>
             <d6p1:_IsReadOnly>true</d6p1:_IsReadOnly>
-            <d6p1:_QueryTemplate>{searchTerms} AND ( path: "[Enter path of site collection, e.g. https://mytenant.sharepoint.com/sites/sitecollectionone]" OR path: "[Enter path of site collection, e.g. https://mytenant.sharepoint.com/sites/sitecollectiontwo]"  )</d6p1:_QueryTemplate>
+            <d6p1:_QueryTemplate>{searchTerms} AND ( path: "https://M365x102144.sharepoint.com/teams/Microsoft"  )</d6p1:_QueryTemplate>
             <d6p1:_SourceId i:nil="true" />
           </d4p1:QueryTransform>
         </d4p1:Source>

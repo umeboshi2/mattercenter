@@ -5,9 +5,6 @@ using Microsoft.Azure.KeyVault;
 using Microsoft.IdentityModel.Clients.ActiveDirectory;
 using Microsoft.Extensions.Configuration;
 using System.Security.Cryptography.X509Certificates;
-using System.Threading.Tasks;
-using System.Collections;
-using System.Linq;
 
 namespace Microsoft.Legal.MatterCenter.Jobs
 {
@@ -85,20 +82,21 @@ namespace Microsoft.Legal.MatterCenter.Jobs
             var values = kv.GetSecretsAsync(this.Configuration.GetSection("General").GetSection("KeyVaultURI").Value.ToString()).GetAwaiter().GetResult();
 
 
-            if (values != null && values.Value != null)
+            if (values != null)
             {
 
-                foreach (var m in values.Value)
+                foreach (var m in values)
                     secrets.Add(m.Identifier.Name);
             }
 
-            while (values != null && !string.IsNullOrWhiteSpace(values.NextLink))
+
+            while (values != null && !string.IsNullOrWhiteSpace(values.NextPageLink))
             {
-                values = kv.GetSecretsNextAsync(values.NextLink).GetAwaiter().GetResult();
-                if (values != null && values.Value != null)
+                values = kv.GetSecretsNextAsync(values.NextPageLink).GetAwaiter().GetResult();
+                if (values != null)
                 {
 
-                    foreach (var m in values.Value)
+                    foreach (var m in values)
                         secrets.Add(m.Identifier.Name);
                 }
             }

@@ -14,13 +14,13 @@ using System.Collections.Generic;
 using System.Linq;
 using Microsoft.Legal.MatterCenter.Models;
 using Microsoft.Legal.MatterCenter.Utility;
-using System.Net.Http;
-using System.Net.Http.Headers;
 using Microsoft.Extensions.Options;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 using System.Text;
 using Microsoft.Exchange.WebServices.Data;
+using System.Net.Http;
+using System.Net.Http.Headers;
 
 namespace Microsoft.Legal.MatterCenter.Repository
 {

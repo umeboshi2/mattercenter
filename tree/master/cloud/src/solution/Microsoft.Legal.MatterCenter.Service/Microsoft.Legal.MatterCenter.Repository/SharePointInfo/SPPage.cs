@@ -53,7 +53,7 @@ namespace Microsoft.Legal.MatterCenter.Repository
                 {
                     //// Find Default Layout from Master Page Gallery to create Web Part Page                
 
-                    Web web = clientContext.Web;
+                    Microsoft.SharePoint.Client.Web web = clientContext.Web;
                     ListItemCollection collection = spList.GetData(clientContext, masterpagelistName);
                     clientContext.Load(collection, listItemCollectionProperties => listItemCollectionProperties.Include(listItemProperties => listItemProperties.Id, listItemProperties => listItemProperties.DisplayName));
                     clientContext.ExecuteQuery();
@@ -143,7 +143,7 @@ namespace Microsoft.Legal.MatterCenter.Repository
         /// <param name="web">Web object of the current context</param>
         /// <returns>List of Web Parts</returns>
         public string[] ConfigureXMLCodeOfWebParts(Client client, Matter matter, ClientContext clientContext, string pageName, Uri uri, 
-            Web web, MatterConfigurations matterConfigurations)
+            Microsoft.SharePoint.Client.Web web, MatterConfigurations matterConfigurations)
         {
             //injecting matterextraproperties as string while creating matter landing page.
             string matterExtraPropertiesValues = string.Empty;

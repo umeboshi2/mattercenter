@@ -61,7 +61,7 @@ var oDocumentLandingObject = (function () {
         sVersionHistoryURL: "/_layouts/15/Versions.aspx?list={{0}}&ID={1}",
         sDownloadURL: "/_layouts/15/download.aspx?SourceUrl={0}&Source={1}",
         sDisplayFormURL: "/Forms/DispForm.aspx?ID=",
-        sSendToOneDriveURL: "[[[Send to OneDrive]]]?SPListItemId={0}$|${1}$|${2}",//// Will be updated via OneClick
+        sSendToOneDriveURL: "/pages/SendToOneDrive.aspx?SPListItemId={0}$|${1}$|${2}",//// Will be updated via OneClick
         sPropertyToInclude: "FileLeafRef,HasUniqueRoleAssignments,_dlc_DocId,FileRef,DocIcon,_UIVersionString,Modified,Editor,FileDirRef",
         sVisioExtension: "vsdx,vsdm",
         oVersionInfo: {},

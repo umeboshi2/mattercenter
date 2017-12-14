@@ -116,7 +116,7 @@ namespace Microsoft.Legal.MatterCenter.Repository
                         searchSettings.ManagedPropertyTitle };
                     List<object> columnValues = new List<object>() { WebUtility.HtmlEncode(JsonConvert.SerializeObject(matterConfigurations)),
                         searchSettings.MatterConfigurationTitleValue };
-                    Web web = clientContext.Web;
+                    Microsoft.SharePoint.Client.Web web = clientContext.Web;
                     List list = web.Lists.GetByTitle(listNames.MatterConfigurationsList);
                     spList.AddItem(clientContext, list, columnNames, columnValues);
                 }
@@ -570,7 +570,7 @@ namespace Microsoft.Legal.MatterCenter.Repository
                 {
                     List<string> columnNames = new List<string>() { matterSettings.MatterConfigurationColumn, searchSettings.ManagedPropertyTitle };
                     List<object> columnValues = new List<object>() { WebUtility.HtmlEncode(JsonConvert.SerializeObject(matterConfigurations)), searchSettings.MatterConfigurationTitleValue };
-                    Web web = clientContext.Web;
+                    Microsoft.SharePoint.Client.Web web = clientContext.Web;
                     List list = web.Lists.GetByTitle(listNames.MatterConfigurationsList);
                     spList.AddItem(clientContext, list, columnNames, columnValues);
                 }
@@ -759,7 +759,7 @@ namespace Microsoft.Legal.MatterCenter.Repository
                             }
                         }
 
-                        Web web = clientContext.Web;
+                        Microsoft.SharePoint.Client.Web web = clientContext.Web;
                         List matterList = web.Lists.GetByTitle(matterListName);
                         // To avoid the invalid symbol error while parsing the JSON, return the response in lower case
                         returnFlag = spList.AddItem(clientContext, matterList, columnNames, columnValues);
@@ -967,7 +967,7 @@ namespace Microsoft.Legal.MatterCenter.Repository
         }
 
         public string[] ConfigureXMLCodeOfWebParts(Client client, Matter matter, ClientContext clientContext, string pageName, Uri uri,
-            Web web, MatterConfigurations matterConfigurations)
+            Microsoft.SharePoint.Client.Web web, MatterConfigurations matterConfigurations)
         {
             return spPage.ConfigureXMLCodeOfWebParts(client, matter, clientContext, pageName, uri, web, matterConfigurations);
         }
@@ -1874,7 +1874,7 @@ namespace Microsoft.Legal.MatterCenter.Repository
                 CamlQuery query = new CamlQuery();
                 if (client.Name != null)
                 {
-                    Web web = clientContext.Web;
+                    Microsoft.SharePoint.Client.Web web = clientContext.Web;
                     ListCollection lists = web.Lists;
                     List selectedList = lists.GetByTitle(client.Name);
                     spContentTypes.AssignContentType(clientContext, contentTypeName, selectedList);

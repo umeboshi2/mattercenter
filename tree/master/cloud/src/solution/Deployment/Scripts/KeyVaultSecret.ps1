@@ -13,3 +13,4 @@ Login-AzureRmAccount
 
 $secretvalue = ConvertTo-SecureString $ADApplicationKey -AsPlainText -Force
 $secret = Set-AzureKeyVaultSecret -VaultName $VaultName -Name 'General-AppKey' -SecretValue $secretvalue 
+#$secret = Set-AzureKeyVaultSecret -VaultName $VaultName -Name 'General-ClientId’ -SecretValue $secretvalue 

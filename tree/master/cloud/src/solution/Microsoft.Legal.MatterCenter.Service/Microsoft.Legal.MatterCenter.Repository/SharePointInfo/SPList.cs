@@ -145,7 +145,7 @@ namespace Microsoft.Legal.MatterCenter.Repository
             bool result = true;
             if (null != clientContext && null != listInfo && !string.IsNullOrWhiteSpace(listInfo.name))
             {
-                Web web = clientContext.Web;
+                Microsoft.SharePoint.Client.Web web = clientContext.Web;
                 ListTemplateCollection listTemplates = web.ListTemplates;
                 ListCreationInformation creationInfo = new ListCreationInformation();
                 creationInfo.Title = listInfo.name;
@@ -219,7 +219,7 @@ namespace Microsoft.Legal.MatterCenter.Repository
             try
             {
                 ClientContext clientContext = spoAuthorization.GetClientContext(clientUrl);
-                Web web = clientContext.Web;
+                Microsoft.SharePoint.Client.Web web = clientContext.Web;
                 var uploadFile = new FileCreationInformation();
                 using (var stream = uploadedFile.OpenReadStream())
                 {
@@ -257,7 +257,7 @@ namespace Microsoft.Legal.MatterCenter.Repository
         /// <param name="folderName">Target folder name where file needs to be uploaded.</param>
         /// <param name="uploadFile">Object having file creation information</param>
         /// <returns>It returns true if upload is successful else false</returns>
-        private GenericResponseVM DocumentUpload(string folderPath, IList<string> listResponse, ClientContext clientContext, string documentLibraryName, Web web, string folderName, FileCreationInformation uploadFile)
+        private GenericResponseVM DocumentUpload(string folderPath, IList<string> listResponse, ClientContext clientContext, string documentLibraryName, Microsoft.SharePoint.Client.Web web, string folderName, FileCreationInformation uploadFile)
         {            
             GenericResponseVM genericResponse = null;
             using (clientContext)
@@ -331,7 +331,7 @@ namespace Microsoft.Legal.MatterCenter.Repository
                 //ToDo: Need to validate the url path
                 string oneNotePath = $"{hostingEnvironment.WebRootPath}//{ServiceConstants.ONE_NOTE_RELATIVE_FILE_PATH}";
                 byte[] oneNoteFile = System.IO.File.ReadAllBytes(oneNotePath);
-                Web web = clientContext.Web;
+                Microsoft.SharePoint.Client.Web web = clientContext.Web;
                 Microsoft.SharePoint.Client.File file = web.GetFolderByServerRelativeUrl(oneNoteLocation).Files.Add(new FileCreationInformation()
                 {
                     Url = string.Concat(listName, ServiceConstants.EXTENSION_ONENOTE_TABLE_OF_CONTENT),
@@ -724,7 +724,7 @@ namespace Microsoft.Legal.MatterCenter.Repository
                 ListItem listItem = null;
                 if (null != clientContext && !string.IsNullOrEmpty(documentLibraryName) && !string.IsNullOrEmpty(fileName) && !string.IsNullOrEmpty(folderPath) && null != mailProperties)
                 {
-                    Web web = clientContext.Web;
+                    Microsoft.SharePoint.Client.Web web = clientContext.Web;
                     ListCollection lists = web.Lists;
                     CamlQuery query = new CamlQuery();
                     List selectedList = lists.GetByTitle(documentLibraryName);

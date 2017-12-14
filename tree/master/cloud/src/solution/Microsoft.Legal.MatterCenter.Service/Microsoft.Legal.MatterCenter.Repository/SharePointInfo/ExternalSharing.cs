@@ -160,7 +160,7 @@ namespace Microsoft.Legal.MatterCenter.Repository
                 SharingResult sharingResult = null;                
                 using (var clientContext = spoAuthorization.GetClientContext(clientUrl))
                 {
-                    sharingResult = Web.ShareObject(clientContext, url, peoplePicker, roleValue, 0, propagateAcl, sendEmail, includeAnonymousLinkInEmail, emailSubject, emailBody, useSimplifiedRoles);                    
+                    sharingResult = Microsoft.SharePoint.Client.Web.ShareObject(clientContext, url, peoplePicker, roleValue, 0, propagateAcl, sendEmail, includeAnonymousLinkInEmail, emailSubject, emailBody, useSimplifiedRoles);                    
                     clientContext.Load(sharingResult);
                     clientContext.ExecuteQuery();
                 }                                

@@ -16,17 +16,17 @@ var oFooterLinks = {
     "searchPageURL": "/search/Pages/results.aspx?k=@@searchText",
     "dashboardDocumentsQueryString": "?section=2",
     "matterDocumentsQueryString": "?section=1",
-    "dashboard": "[[[Tenant Web Dashboard Url]]]",
-    "settingsPage": "[[[Tenant Settings Url]]]",
-    "logoLink": "[[[Logo link]]]"
+    "dashboard": "/sitepages/MatterCenterHome.aspx",
+    "settingsPage": "/SitePages/Settings.aspx",
+    "logoLink": "[Enter URL for Logo link, e.g. site.supportsite.com/logo.aspx]"
 },
 
 /* Common objects*/
 oCommonLinks = {
-    "AzureSiteUrl": "[[[Azure Site Url]]]",
-    "sCatalogSite": "[[[Catalog site relative Url]]]/",
-    "applicationInsightsId": "[[[App Insights ID]]]",
-    "oMatterCenterAssetsLocation": "[[[Common Assets Url]]]",
+    "AzureSiteUrl": "https://MatterCenterWeb12112301.azurewebsites.net",
+    "sCatalogSite": "/sites/catalog//",
+    "applicationInsightsId": "a205e453-f2ed-45f8-a9e4-eafaab76c814",
+    "oMatterCenterAssetsLocation": "/SiteAssets/Matter Center Assets/Common Assets/",
 };
 
 /* Assets location */

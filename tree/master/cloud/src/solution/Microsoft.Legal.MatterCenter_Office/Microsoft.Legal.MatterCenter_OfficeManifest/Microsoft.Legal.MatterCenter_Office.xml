@@ -6,19 +6,19 @@
   <ProviderName>Microsoft Corporation</ProviderName>
   <DefaultLocale>en-US</DefaultLocale>
   <DisplayName DefaultValue="Matter Center" />
-  <Description DefaultValue="Matter Center App allows you to search matters, document, filing documents to matter and even create new matters."/>
-  <IconUrl DefaultValue="https://matterwebapp.azurewebsites.net/Images/32x32-logo.png" />
+  <Description DefaultValue="Matter Center App allows you to search matters, document, filing documents to matter and even create new matters." />
+  <IconUrl DefaultValue="https://MatterCenterWeb12140516.azurewebsites.net/Images/32x32-logo.png" />
   <HighResolutionIconUrl DefaultValue="https://matterwebapp.azurewebsites.net/Images/64x64-logo.png" />
   <AppDomains>
-    <AppDomain>siteurl</AppDomain>
-    <AppDomain>tenanturl</AppDomain>
+    <AppDomain>https://MatterCenterWeb12112301.azurewebsites.net</AppDomain>
+    <AppDomain>https://M365x102144.sharepoint.com</AppDomain>
     <AppDomain>https://login.microsoftonline.com/</AppDomain>
   </AppDomains>
   <Hosts>
     <Host Name="Document" />
   </Hosts>
   <DefaultSettings>
-    <SourceLocation DefaultValue="https://matterwebapp.azurewebsites.net" />
+    <SourceLocation DefaultValue="https://MatterCenterWeb12140516.azurewebsites.net" />
   </DefaultSettings>
   <Permissions>Restricted</Permissions>
 </OfficeApp>

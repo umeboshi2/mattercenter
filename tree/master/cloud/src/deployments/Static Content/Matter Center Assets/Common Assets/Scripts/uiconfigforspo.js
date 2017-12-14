@@ -1,4 +1,4 @@
-﻿var uiconfigs =
+var uiconfigs =
 {
   "MatterLanding": {
     "Label1Tab1HeaderText": "Matter Profile",
