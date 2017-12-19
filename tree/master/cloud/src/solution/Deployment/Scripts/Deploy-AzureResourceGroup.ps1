@@ -25,6 +25,7 @@ Param(
     [string] [Parameter(Mandatory=$true, HelpMessage="ex: MatterCenterWeb")] $WebAppName = 'MatterCenterWeb',
 	[string] [Parameter(Mandatory=$true, HelpMessage="Provide the catalog site url you used during sharepoint site deployment. `
 	it will be https://<tenantname>.sharepoinT.com/sites/catalog if you didnt change default catalog site.")] $CentralRepositoryUrl,
+    [string] [Parameter(Mandatory=$true, HelpMessage="ex: My Azure Subscription")] $SubscriptionName = 'SubscriptionName',
 	
     [switch] $UploadArtifacts,
     [string] $StorageAccountName,
@@ -75,9 +76,10 @@ Set-Content -Path $TemplateParametersFile -Value (ConvertTo-Json -InputObject $p
 
 
 Import-Module Azure -ErrorAction SilentlyContinue
-#Add-AzureAccount
-$subsc = Login-AzureRmAccount
-$global:TenantName = $subsc.Context.Tenant.Directory
+# Login-AzureAccount is an alias for Add-AzureRmAccount, but is harder to find in the documentation
+# https://docs.microsoft.com/en-us/powershell/module/azurerm.profile/add-azurermaccount
+$subsc = Add-AzureRmAccount -SubscriptionName $SubscriptionName
+$global:TenantName = $subsc.Context.Tenant.Domain
 
 try {
  #   [Microsoft.Azure.Common.Authentication.AzureSession]::ClientFactory.AddUserAgent("VSAzureTools-$UI$($host.name)".replace(" ","_"), "2.8")
