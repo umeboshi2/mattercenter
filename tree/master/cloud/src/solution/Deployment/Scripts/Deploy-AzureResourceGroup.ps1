@@ -76,7 +76,8 @@ Set-Content -Path $TemplateParametersFile -Value (ConvertTo-Json -InputObject $p
 
 
 Import-Module Azure -ErrorAction SilentlyContinue
-# Login-AzureAccount is an alias for Add-AzureRmAccount, but is harder to find in the documentation
+# Login-AzureAccount is an alias for Add-AzureRmAccount, and is a better name because it logs you in.
+# BUT it is harder to find in the documentation and I wonder if the alias will always be there?
 # https://docs.microsoft.com/en-us/powershell/module/azurerm.profile/add-azurermaccount
 $subsc = Add-AzureRmAccount -SubscriptionName $SubscriptionName
 $global:TenantName = $subsc.Context.Tenant.Domain
