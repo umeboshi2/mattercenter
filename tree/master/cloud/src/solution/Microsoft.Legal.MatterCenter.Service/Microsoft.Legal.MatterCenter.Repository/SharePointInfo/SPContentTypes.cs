@@ -52,9 +52,9 @@ namespace Microsoft.Legal.MatterCenter.Repository
             try
             {
                 if (null != clientContext && null != contentTypesNames)
-                {                   
+                {
 
-                    Web web = clientContext.Web;
+                    Microsoft.SharePoint.Client.Web web = clientContext.Web;
                     string contentTypeName = contentTypesConfig.OneDriveContentTypeGroup.Trim();
                     contentTypeCollection = web.ContentTypes;
                     clientContext.Load(contentTypeCollection, contentType => contentType.Include(thisContentType => thisContentType.Name).Where(currContentType => currContentType.Group == contentTypeName));
@@ -120,7 +120,7 @@ namespace Microsoft.Legal.MatterCenter.Repository
         {
             try
             {
-                Web web = clientContext.Web;
+                Microsoft.SharePoint.Client.Web web = clientContext.Web;
                 List matterList = web.Lists.GetByTitle(matter.Name);
                 SetFieldValues(clientContext, contentTypeCollection, matterList, matterMetadata);
                 clientContext.ExecuteQuery();

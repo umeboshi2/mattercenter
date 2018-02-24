@@ -1143,7 +1143,7 @@ namespace Microsoft.Legal.MatterCenter.Repository
             {
                 using (ClientContext clientContext = spoAuthorization.GetClientContext(client.Url))
                 {
-                    Web web = clientContext.Web;
+                    Microsoft.SharePoint.Client.Web web = clientContext.Web;
                     clientContext.Load(web.RoleDefinitions, roledefinitions => roledefinitions.Include(thisRole => thisRole.Name, thisRole => thisRole.Id));
                     clientContext.ExecuteQuery();
                     string userAllowedPermissions = searchSettings.UserPermissions;

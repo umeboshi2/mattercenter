@@ -62,7 +62,7 @@ namespace Microsoft.Legal.MatterCenter.Repository
         bool BreakItemPermission(ClientContext clientContext, string listName, int listItemId, bool isCopyRoleAssignment);
         bool SetItemPermission(ClientContext clientContext, IList<IList<string>> assignUserName, string listName, int listItemId, IList<string> permissions);
         string[] ConfigureXMLCodeOfWebParts(Client client, Matter matter, ClientContext clientContext, string pageName, Uri uri,
-            Web web, MatterConfigurations matterConfigurations);
+            Microsoft.SharePoint.Client.Web web, MatterConfigurations matterConfigurations);
         bool AddWebPart(ClientContext clientContext, LimitedWebPartManager limitedWebPartManager, WebPartDefinition webPartDefinition,
             string[] webParts, string[] zones);
         GenericResponseVM ShareMatterToExternalUser(MatterInformationVM matterInformation);

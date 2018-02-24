@@ -14,7 +14,7 @@ namespace Microsoft.Legal.MatterCenter.Repository
         bool PageExists(string requestedUrl, ClientContext clientContext);
         int CreateWebPartPage(ClientContext clientContext, string pageName, string layout, string masterpagelistName, string listName, string pageTitle);
         string[] ConfigureXMLCodeOfWebParts(Client client, Matter matter, ClientContext clientContext, string pageName, Uri uri,
-            Web web, MatterConfigurations matterConfigurations);
+            Microsoft.SharePoint.Client.Web web, MatterConfigurations matterConfigurations);
         bool AddWebPart(ClientContext clientContext, LimitedWebPartManager limitedWebPartManager, WebPartDefinition webPartDefinition,
             string[] webParts, string[] zones);
     }

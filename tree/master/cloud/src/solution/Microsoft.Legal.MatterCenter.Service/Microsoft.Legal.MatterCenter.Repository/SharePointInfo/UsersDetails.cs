@@ -293,7 +293,7 @@ namespace Microsoft.Legal.MatterCenter.Repository
             {
                 if (null != matter)
                 {
-                    Web web = clientContext.Web;
+                    Microsoft.SharePoint.Client.Web web = clientContext.Web;
                     List list = web.Lists.GetByTitle(matter.Name);
                     Users userDetails = GetLoggedInUserDetails(clientContext);
                     Principal userPrincipal = web.EnsureUser(userDetails.Name);
