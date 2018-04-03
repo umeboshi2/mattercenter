@@ -117,3 +117,12 @@ Matter Center for Office 365 is licensed under the [MIT Open Source license](htt
 
 #Code of Conduct
 This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/). For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
+
+# Notes
+
+article: https://www.networkworld.com/article/3183572/microsoft-subnet/microsoft-matter-center-office-365-legal-industry-case-management-add-in.html
+
+deploy notes: https://images.techhive.com/assets/2017/03/21/microsoftmattercentertechnotesrand.pdf
+
+updated article: https://randsnet.blogspot.com/2017/11/update-on-microsofts-matter-center.html
+
